@@ -17,18 +17,17 @@ Para visualizar e interagir com o dashboard localmente, siga estes passos:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO]
-    cd [NOME_DA_PASTA_DO_REPOSITORIO]
+    git clone https://github.com/joao00001/Dashboard-Social-do-Brasil.git
     ```
 2.  **Execute com um servidor web local:**
-    Devido às políticas de segurança dos navegadores (CORS), abrir o arquivo `index.html` diretamente do sistema de arquivos (`file:///...`) **não permitirá** que as chamadas às APIs externas funcionem. Você precisa servi-lo através de um servidor local.
+    Devido às políticas de segurança dos navegadores (CORS), abrir o arquivo `dashboard.html` diretamente do sistema de arquivos (`file:///...`) **não permitirá** que as chamadas às APIs externas funcionem. Você precisa servi-lo através de um servidor local.
     * **Usando Python 3:**
         ```bash
         python -m http.server
         ```
         Acesse `http://localhost:8000` no seu navegador.
     * **Usando a extensão "Live Server" no VS Code:**
-        Clique com o botão direito no arquivo `index.html` e selecione "Open with Live Server".
+        Clique com o botão direito no arquivo `dashboard.html` e selecione "Open with Live Server".
 
 ## Escalabilidade
 
@@ -63,7 +62,7 @@ Ao lidar com múltiplas APIs externas, especialmente governamentais, é importan
 * **Limites de Taxa (Rate Limiting):** Algumas APIs podem impor limites no número de requisições permitidas em um certo período.
 * **Dados Não Encontrados (Erros 404):** Mesmo com uma requisição bem formada, a API pode não ter dados para a consulta específica (ex: para um ano ou localidade particular). O dashboard tenta tratar esses casos exibindo mensagens como "Dado indisponível".
 * **Formato de Dados Inesperado:** Ocasionalmente, uma API pode retornar dados em um formato ligeiramente diferente do esperado, o que pode exigir ajustes no código de processamento.
-* **CORS:** Reafirmando, tentar rodar o `index.html` diretamente do sistema de arquivos bloqueará as chamadas de API. É **essencial** usar um servidor local.
+* **CORS:** Reafirmando, tentar rodar o `dashboard.html` diretamente do sistema de arquivos bloqueará as chamadas de API. É **essencial** usar um servidor local.
 
 O código tenta lidar com alguns desses cenários de forma elegante, exibindo mensagens informativas ao usuário, mas a natureza dinâmica das APIs externas significa que problemas podem surgir. Manter as chamadas de API e o processamento de dados robustos é um esforço contínuo.
 
