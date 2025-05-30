@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Social do Brasil</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard Social do Brasil</h1>
+            <p>Criminalidade, Qualidade de Vida e Fatores Sociais</p>
+        </header>
+        <section id="introducao-section" class="section">
+            <p><strong>ATENÇÃO!</strong> Este dashboard apresenta uma visão geral de indicadores sociais e de segurança pública no Brasil, utilizando dados de fontes confiáveis como BrasilAPI e IPEAData. Os gráficos e tabelas aqui apresentados visam auxiliar na análise e compreensão dos principais desafios sociais enfrentados pelo país.</p>
+            <p>O intuito desse site é puramente educacional e informativo, não substituindo análises profissionais ou acadêmicas.</p>
+        </section>
+
+        <section id="seguranca-publica-section" class="section">
+            <h2 class="section-title">Segurança Pública</h2>
+            <div class="grid-container">
+                <div class="card" id="homicidiosEstaduaisCard">
+                    <h3>Homicídios Dolosos por Estado (Mais Recente)</h3>
+                    <div class="chart-container"><canvas id="homicidiosEstaduaisChart"></canvas></div>
+                    <p class="data-source-note">Fonte: BrasilAPI (SINESP)</p>
+                </div>
+                <div class="card" id="roubosFurtosCard">
+                    <h3>Roubo e Furto de Veículos (Alguns Estados)</h3>
+                    <div class="chart-container"><canvas id="roubosFurtosChart"></canvas></div>
+                    <p class="data-source-note">Fonte: BrasilAPI (SINESP)</p>
+                </div>
+                <div class="card" id="ocorrenciasTableCard">
+                    <h3>Ocorrências Selecionadas por Estado (Ano Recente)</h3>
+                    <div id="ocorrenciasTableContainer" class="table-container loading-text">Carregando...</div>
+                    <p class="data-source-note">Fonte: BrasilAPI (SINESP)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="qualidade-vida-section" class="section">
+            <h2 class="section-title">Qualidade de Vida e Desenvolvimento Social</h2>
+            <div class="grid-container">
+                <div class="card" id="idhRegioesCard">
+                    <h3>IDHM por Grandes Regiões (2010)</h3>
+                    <div class="chart-container"><canvas id="idhRegioesChart"></canvas></div>
+                    <p class="data-source-note">Fonte: Atlas do Desenvolvimento Humano no Brasil (PNUD/IPEA/FJP)</p>
+                </div>
+                <div class="card" id="analfabetismoCard">
+                    <h3>Taxa de Analfabetismo (15+ anos, Brasil)</h3>
+                    <div class="chart-container"><canvas id="analfabetismoChart"></canvas></div>
+                    <p class="data-source-note">Fonte: IPEAData (IBGE/PNAD)</p>
+                </div>
+                <div class="card" id="expectativaVidaCard">
+                    <h3>Expectativa de Vida ao Nascer (Brasil)</h3>
+                    <div class="chart-container"><canvas id="expectativaVidaChart"></canvas></div>
+                    <p class="data-source-note">Fonte: IPEAData (IBGE)</p>
+                </div>
+                 <div class="card" id="rendaPobrezaTableCard">
+                    <h3>Indicadores de Renda e Pobreza (Brasil)</h3>
+                    <div id="rendaPobrezaTableContainer" class="table-container loading-text">Carregando...</div>
+                    <p class="data-source-note">Fonte: IPEAData (IBGE/PNAD)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="outros-fatores-sociais-section" class="section">
+            <h2 class="section-title">Outros Fatores Sociais</h2>
+            <div class="grid-container">
+                <div class="card" id="popFaixaEtariaCard">
+                    <h3>População por Grandes Grupos Etários (Brasil)</h3>
+                    <div class="chart-container"><canvas id="popFaixaEtariaChart"></canvas></div>
+                    <p class="data-source-note">Fonte: IPEAData (IBGE)</p>
+                </div>
+                <div class="card" id="desocupacaoCard">
+                    <h3>Taxa de Desocupação (Brasil, Trimestral)</h3>
+                    <div class="chart-container"><canvas id="desocupacaoChart"></canvas></div>
+                    <p class="data-source-note">Fonte: IPEAData (IBGE/PNAD Contínua)</p>
+                </div>
+                 <div class="card" id="saneamentoCard">
+                    <h3>Acesso a Saneamento Básico (Brasil)</h3>
+                     <div class="chart-container"><canvas id="saneamentoChart"></canvas></div>
+                    <p class="data-source-note">Fonte: IPEAData (SNIS)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Dashboard Social do Brasil para estudo e pesquisa feita por João Marcelo Detomini. Fontes: BrasilAPI, IPEAData, IBGE, Atlas do Desenvolvimento Humano.<br> Link do Repositório no GitHub: <a href="https://github.com/joao00001/Dashboard-Social-do-Brasil" target="_blank">https://github.com/joao00001/Dashboard-Social-do-Brasil</a></p>
+            <p id="currentDateTime">Carregando data atual...</p>
+        </footer>
+    </div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
